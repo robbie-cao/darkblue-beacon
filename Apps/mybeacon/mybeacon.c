@@ -52,7 +52,15 @@ static void mybeacon_create(void);
  *               Variables Definitions
  ******************************************************/
 
-const UINT8 mybeacon_uuid[16] = {0x87, 0xf8, 0xac, 0xb5, 0x9a, 0xd0, 0x29, 0xa7, 0x20, 0x4c, 0xf0, 0x80, 0xe2, 0xb5, 0x5c, 0x0e};
+//const UINT8 mybeacon_uuid[16] = {0x87, 0xf8, 0xac, 0xb5, 0x9a, 0xd0, 0x29, 0xa7, 0x20, 0x4c, 0xf0, 0x80, 0xe2, 0xb5, 0x5c, 0x0e};
+const UINT8 apple_ibeacon_prefix[4] = {0x4c, 0x00, 0x02, 0x15};
+const UINT8 ibeacon_test_uuid[18] = { 0x4c, 0x00, 0x02, 0x15, 0xe2, 0xc5, 0x6d, 0xb5, 0xdf, 0xfb, 0x48, 0xd2, 0xb0, 0x60, 0xd0, 0xf5, 0xa7, 0x10};
+const UINT8 ibeacon_uuid[16] = { 0xe2, 0xc5, 0x6d, 0xb5, 0xdf, 0xfb, 0x48, 0xd2, 0xb0, 0x60, 0xd0, 0xf5, 0xa7, 0x10, 0x96, 0xe0};
+const UINT8 ibeacon_major[2] = {0x00, 0x01};
+const UINT8 ibeacon_minor[2] = {0x00, 0x01};
+const UINT8 ibeacon_power[1] = {0xC5};
+
+
 UINT16 mymeacon_sequence_number = 0;
 
 // Following structure defines UART configuration
@@ -85,7 +93,7 @@ void mybeacon_create(void)
     // dump the database to debug uart.
     legattdb_dumpDb();
 
-    ble_tracen((UINT8 *)mybeacon_uuid, 16);
+    //ble_tracen((UINT8 *)mybeacon_uuid, 16);
 
     bleprofile_Init(bleprofile_p_cfg);
 
@@ -98,17 +106,12 @@ void mybeacon_create(void)
     adv[0].val     = ADV_FLAGS;
     adv[0].data[0] = LE_GENERAL_DISCOVERABLE | BR_EDR_NOT_SUPPORTED;
 
-    adv[1].len     = 22 + 1;
+    adv[1].len     = 2;
     adv[1].val     = ADV_MANUFACTURER_DATA; // (AD_TYPE == 0xff)
-    adv[1].data[0] = 0x0f;  // Broadcom  (Company Identifier 2 bytes)
-    adv[1].data[1] = 0x00;
+    adv[1].data[0] = 0x12;
+    adv[1].data[1] = 0x34;
 
-    BT_MEMCPY(&adv[1].data[2], mybeacon_uuid, 16);
-
-    adv[1].data[18] = MYBEACON_TYPE & 0xff;
-    adv[1].data[19] = (MYBEACON_TYPE >> 8) & 0xff;
-    adv[1].data[20] = mymeacon_sequence_number & 0xff;
-    adv[1].data[21] = (mymeacon_sequence_number >> 8) & 0xff;
+    //BT_MEMCPY(&adv[1].data[2], ibeacon_test_uuid, 16);
 
     bleprofile_GenerateADVData(adv, 2);
 
@@ -151,17 +154,15 @@ void advertisement_packet_transmission(UINT8 type)
         adv[0].val     = ADV_FLAGS;
         adv[0].data[0] = LE_GENERAL_DISCOVERABLE | BR_EDR_NOT_SUPPORTED;
 
-        adv[1].len     = 22 + 1;
+        adv[1].len     = 0x1A;
         adv[1].val     = ADV_MANUFACTURER_DATA; // (AD_TYPE == 0xff)
-        adv[1].data[0] = 0x0f;  // Broadcom  (Company Identifier 2 bytes)
-        adv[1].data[1] = 0x00;
-
-        BT_MEMCPY(&adv[1].data[2], mybeacon_uuid, 16);
-
-        adv[1].data[18] = MYBEACON_TYPE & 0xff;
-        adv[1].data[19] = (MYBEACON_TYPE >> 8) & 0xff;
-        adv[1].data[20] = ++mymeacon_sequence_number & 0xff;
-        adv[1].data[21] = (mymeacon_sequence_number >> 8) & 0xff;
+        //adv[1].data[0] = 0x12;
+        //adv[1].data[1] = 0x34;
+        BT_MEMCPY(&adv[1].data[0], apple_ibeacon_prefix, 4);
+        BT_MEMCPY(&adv[1].data[4], ibeacon_uuid, 16);
+        BT_MEMCPY(&adv[1].data[20], ibeacon_major, 2);
+        BT_MEMCPY(&adv[1].data[22], ibeacon_minor, 2);
+        BT_MEMCPY(&adv[1].data[24], ibeacon_power, 1);
 
         bleprofile_GenerateADVData(adv, 2);
     }
