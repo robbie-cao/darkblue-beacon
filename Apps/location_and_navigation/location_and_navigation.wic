@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<BLE_Smart_Designer>
+    <DeviceSettings>
+        <Name>location_and_navigation</Name>
+        <Appearance>Unknown</Appearance>
+        <Button>false</Button>
+        <UART>false</UART>
+        <Timer1Sec>true</Timer1Sec>
+        <LED>false</LED>
+        <SPI>false</SPI>
+        <Buzzer>false</Buzzer>
+        <Battery>false</Battery>
+        <FineTimer>1000</FineTimer>
+    </DeviceSettings>
+    <Service predefined="true">
+        <Name>Generic Access</Name>
+        <Uuid>1800</Uuid>
+        <Description>The generic_access service contains generic information about the device. All available Characteristics are readonly.</Description>
+        <Characteristic mandatory="true" predefined="true">
+            <Name>Device Name</Name>
+            <Uuid>2A00</Uuid>
+            <Description>The Information included in this page is informative. The normative descriptions are contained in the applicable specification.</Description>
+            <DataType>org.bluetooth.characteristic.gap.device_name</DataType>
+            <Size>23</Size>
+            <InitialValue>location_and_navigation</InitialValue>
+            <Properties>
+                <Read type="Mandatory">true</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Excluded">false</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+        <Characteristic mandatory="true" predefined="true">
+            <Name>Appearance</Name>
+            <Uuid>2A01</Uuid>
+            <Description>The external appearance of this device. The values are composed of a category (10-bits) and sub-categories (6-bits).</Description>
+            <DataType>org.bluetooth.characteristic.gap.appearance</DataType>
+            <Size>2</Size>
+            <InitialValue>00 00</InitialValue>
+            <Properties>
+                <Read type="Mandatory">true</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Excluded">false</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+    </Service>
+    <Service predefined="true">
+        <Name>Generic Attribute</Name>
+        <Uuid>1801</Uuid>
+        <Description>Generic Attribute</Description>
+    </Service>
+    <Service predefined="true">
+        <Name>Location and Navigation</Name>
+        <Uuid>1819</Uuid>
+        <Description>This service exposes location and navigation-related data from a Location and Navigation sensor intended for outdoor activity applications.</Description>
+        <Characteristic mandatory="true" predefined="true">
+            <Name>LN Feature</Name>
+            <Uuid>2A6A</Uuid>
+            <Description>LN Feature</Description>
+            <DataType>org.bluetooth.characteristic.ln_feature</DataType>
+            <Size>4</Size>
+            <InitialValue>00 00 00 00</InitialValue>
+            <Properties>
+                <Read type="Mandatory">true</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Excluded">false</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+        <Characteristic mandatory="true" predefined="true">
+            <Name>Location and Speed</Name>
+            <Uuid>2A67</Uuid>
+            <Description>Location and Speed</Description>
+            <DataType>org.bluetooth.characteristic.location_and_speed</DataType>
+            <Size>20</Size>
+            <InitialValue>00 00</InitialValue>
+            <Properties>
+                <Read type="Excluded">false</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Mandatory">true</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>false</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+        <Characteristic mandatory="false" predefined="true">
+            <Name>Position Quality</Name>
+            <Uuid>2A69</Uuid>
+            <Description>Position Quality</Description>
+            <DataType>org.bluetooth.characteristic.position_quality</DataType>
+            <Size>4</Size>
+            <InitialValue>00 00</InitialValue>
+            <Properties>
+                <Read type="Mandatory">true</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Excluded">false</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+        <Characteristic mandatory="false" predefined="true">
+            <Name>LN Control Point</Name>
+            <Uuid>2A6B</Uuid>
+            <Description>LN Control Point</Description>
+            <DataType>org.bluetooth.characteristic.ln_control_point</DataType>
+            <Size>19</Size>
+            <InitialValue>00</InitialValue>
+            <Properties>
+                <Read type="Excluded">true</Read>
+                <Write type="Mandatory">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Excluded">true</Notify>
+                <Indicate type="Mandatory">true</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+            <ClientConfiguration>
+                <Notification>false</Notification>
+                <Indication>false</Indication>
+            </ClientConfiguration>
+        </Characteristic>
+        <Characteristic mandatory="false" predefined="true">
+            <Name>Navigation</Name>
+            <Uuid>2A68</Uuid>
+            <Description>Navigation</Description>
+            <DataType>org.bluetooth.characteristic.navigation</DataType>
+            <Size>12</Size>
+            <InitialValue>00 00 00 00 00 00</InitialValue>
+            <Properties>
+                <Read type="Excluded">false</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Mandatory">true</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>false</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+    </Service>
+</BLE_Smart_Designer>

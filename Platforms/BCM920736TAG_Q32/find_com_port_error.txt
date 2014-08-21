@@ -1,0 +1,10 @@
++------------------------------------------------------------------------------------------+
+| No BCM20736 detected                                                                     |
+| 1. Verify the BCM20736 tag is connected _AND_ powered                                    |
+| 2. Verify SW2 and SW3 switches are towards Vusb and Vreg respectively and all SW4        |
+|     switches are set to ON                                                               |
+| 3. Press the reset button on the tag and retry                                           |
+|                                                                                          |
+| If this problem persists, the EEPROM on the tag may be corrupted                         |
+| Please see Appendix D in the Quick Start Guide for recovery instructions                 |
++------------------------------------------------------------------------------------------+

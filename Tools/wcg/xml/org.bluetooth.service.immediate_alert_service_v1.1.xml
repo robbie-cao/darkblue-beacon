@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2011 Bluetooth SIG, Inc. All rights reserved. -->
+<Service xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/service.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="org.bluetooth.service.immediate_alert_service_v1.1" uuid="1802" name="Immediate Alert Service 1.1" last-modified="2012-11-02" approved="No">
+<InformativeText>
+    <Abstract>This service exposes a control point to allow a peer device to cause the device to immediately alert.</Abstract>
+    <Summary>The Immediate Alert service uses the Alert Level characteristic (as defined in [1]) to cause an alert when it is written with a value other than “No Alert.”</Summary>
+</InformativeText>
+    <Dependencies>
+        <Dependency>This service has no dependencies on other GATT-based services.</Dependency>
+	</Dependencies>
+    <GATTRequirements>
+        <Requirement subProcedure="Write Without Response">Mandatory</Requirement>
+	</GATTRequirements>
+    <Transports>
+        <Classic>true</Classic>
+        <LowEnergy>true</LowEnergy>
+        <HighSpeed>true</HighSpeed>
+	</Transports>
+    <ErrorCodes></ErrorCodes>
+    <Characteristics>
+        <Characteristic type="org.bluetooth.characteristic.alert_level" name="Alert Level">
+            <Requirement>Mandatory</Requirement>
+            <Properties>
+                <Read>Excluded</Read>
+                <Write>Excluded</Write>
+                <WriteWithoutResponse>Mandatory</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Excluded</Notify>
+                <Indicate>Excluded</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+			</Properties>
+		</Characteristic>
+	</Characteristics>
+</Service>
+  

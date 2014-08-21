@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2011 Bluetooth SIG, Inc. All rights reserved. -->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="org.bluetooth.characteristic.latitude" uuid="7001" name="Latitude">
+	<InformativeText>
+		<Abstract>
+			The Latitude characteristic describes the WGS84 North coordinate of the device.
+		</Abstract>
+	</InformativeText>
+	<Value>
+		<Field name="Latitude">
+			<Requirement>Mandatory</Requirement>
+			<Format>sint32</Format>
+		</Field>
+	</Value>
+</Characteristic>

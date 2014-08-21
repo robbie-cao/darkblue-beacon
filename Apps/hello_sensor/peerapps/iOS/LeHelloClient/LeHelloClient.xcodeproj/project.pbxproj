@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		960330D518B6CA1600F6B66E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960330D418B6CA1600F6B66E /* Foundation.framework */; };
+		960330D718B6CA1600F6B66E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960330D618B6CA1600F6B66E /* CoreGraphics.framework */; };
+		960330D918B6CA1600F6B66E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960330D818B6CA1600F6B66E /* UIKit.framework */; };
+		960330E118B6CA1600F6B66E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 960330E018B6CA1600F6B66E /* main.m */; };
+		960330E518B6CA1600F6B66E /* LeHelloClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 960330E418B6CA1600F6B66E /* LeHelloClientAppDelegate.m */; };
+		960330E818B6CA1600F6B66E /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960330E618B6CA1600F6B66E /* Main_iPhone.storyboard */; };
+		960330EB18B6CA1600F6B66E /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 960330E918B6CA1600F6B66E /* Main_iPad.storyboard */; };
+		960330EE18B6CA1600F6B66E /* LeHelloClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960330ED18B6CA1600F6B66E /* LeHelloClientViewController.m */; };
+		960330F018B6CA1600F6B66E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960330EF18B6CA1600F6B66E /* Images.xcassets */; };
+		960330F718B6CA1600F6B66E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960330F618B6CA1600F6B66E /* XCTest.framework */; };
+		960330F818B6CA1600F6B66E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960330D418B6CA1600F6B66E /* Foundation.framework */; };
+		960330F918B6CA1600F6B66E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960330D818B6CA1600F6B66E /* UIKit.framework */; };
+		9603310318B6CA1600F6B66E /* LeHelloClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9603310218B6CA1600F6B66E /* LeHelloClientTests.m */; };
+		96647CD118C7A5FF003D7AEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96647CD018C7A5FF003D7AEC /* Localizable.strings */; };
+		96E5F44218BE6CF50009B672 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E5F44118BE6CF50009B672 /* CustomNavigationController.m */; };
+		96E5F44518BEBA7B0009B672 /* LeDevicePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E5F44418BEBA7B0009B672 /* LeDevicePickerViewController.m */; };
+		96E5F44818C556C40009B672 /* LeDevicePickerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E5F44718C556C40009B672 /* LeDevicePickerListCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		960330FA18B6CA1600F6B66E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 960330C918B6CA1600F6B66E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 960330D018B6CA1600F6B66E;
+			remoteInfo = LeHelloClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		960330D118B6CA1600F6B66E /* LeHelloClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeHelloClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		960330D418B6CA1600F6B66E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		960330D618B6CA1600F6B66E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		960330D818B6CA1600F6B66E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		960330DC18B6CA1600F6B66E /* LeHelloClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeHelloClient-Info.plist"; sourceTree = "<group>"; };
+		960330E018B6CA1600F6B66E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		960330E218B6CA1600F6B66E /* LeHelloClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeHelloClient-Prefix.pch"; sourceTree = "<group>"; };
+		960330E318B6CA1600F6B66E /* LeHelloClientAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeHelloClientAppDelegate.h; sourceTree = "<group>"; };
+		960330E418B6CA1600F6B66E /* LeHelloClientAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeHelloClientAppDelegate.m; sourceTree = "<group>"; };
+		960330E718B6CA1600F6B66E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		960330EA18B6CA1600F6B66E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		960330EC18B6CA1600F6B66E /* LeHelloClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeHelloClientViewController.h; sourceTree = "<group>"; };
+		960330ED18B6CA1600F6B66E /* LeHelloClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeHelloClientViewController.m; sourceTree = "<group>"; };
+		960330EF18B6CA1600F6B66E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		960330F518B6CA1600F6B66E /* LeHelloClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeHelloClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		960330F618B6CA1600F6B66E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		960330FE18B6CA1600F6B66E /* LeHelloClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeHelloClientTests-Info.plist"; sourceTree = "<group>"; };
+		9603310218B6CA1600F6B66E /* LeHelloClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeHelloClientTests.m; sourceTree = "<group>"; };
+		96389C3018C7DBB4004C627E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		96647CCD18C55D69003D7AEC /* LeDevicePickerCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeDevicePickerCallback.h; sourceTree = "<group>"; };
+		96647CD018C7A5FF003D7AEC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		96647CD218C7B17C003D7AEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		96647CD318C7B17C003D7AEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		96E5F44018BE6CF50009B672 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
+		96E5F44118BE6CF50009B672 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationController.m; sourceTree = "<group>"; };
+		96E5F44318BEBA7B0009B672 /* LeDevicePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDevicePickerViewController.h; sourceTree = "<group>"; };
+		96E5F44418BEBA7B0009B672 /* LeDevicePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeDevicePickerViewController.m; sourceTree = "<group>"; };
+		96E5F44618C556C40009B672 /* LeDevicePickerListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDevicePickerListCell.h; sourceTree = "<group>"; };
+		96E5F44718C556C40009B672 /* LeDevicePickerListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeDevicePickerListCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		960330CE18B6CA1600F6B66E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960330D718B6CA1600F6B66E /* CoreGraphics.framework in Frameworks */,
+				960330D918B6CA1600F6B66E /* UIKit.framework in Frameworks */,
+				960330D518B6CA1600F6B66E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		960330F218B6CA1600F6B66E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				960330F718B6CA1600F6B66E /* XCTest.framework in Frameworks */,
+				960330F918B6CA1600F6B66E /* UIKit.framework in Frameworks */,
+				960330F818B6CA1600F6B66E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		960330C818B6CA1600F6B66E = {
+			isa = PBXGroup;
+			children = (
+				960330DA18B6CA1600F6B66E /* LeHelloClient */,
+				960330FC18B6CA1600F6B66E /* LeHelloClientTests */,
+				960330D318B6CA1600F6B66E /* Frameworks */,
+				960330D218B6CA1600F6B66E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		960330D218B6CA1600F6B66E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				960330D118B6CA1600F6B66E /* LeHelloClient.app */,
+				960330F518B6CA1600F6B66E /* LeHelloClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		960330D318B6CA1600F6B66E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				960330D418B6CA1600F6B66E /* Foundation.framework */,
+				960330D618B6CA1600F6B66E /* CoreGraphics.framework */,
+				960330D818B6CA1600F6B66E /* UIKit.framework */,
+				960330F618B6CA1600F6B66E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		960330DA18B6CA1600F6B66E /* LeHelloClient */ = {
+			isa = PBXGroup;
+			children = (
+				96E5F44018BE6CF50009B672 /* CustomNavigationController.h */,
+				96E5F44118BE6CF50009B672 /* CustomNavigationController.m */,
+				960330E318B6CA1600F6B66E /* LeHelloClientAppDelegate.h */,
+				960330E418B6CA1600F6B66E /* LeHelloClientAppDelegate.m */,
+				960330E618B6CA1600F6B66E /* Main_iPhone.storyboard */,
+				960330E918B6CA1600F6B66E /* Main_iPad.storyboard */,
+				960330EC18B6CA1600F6B66E /* LeHelloClientViewController.h */,
+				96E5F44318BEBA7B0009B672 /* LeDevicePickerViewController.h */,
+				96E5F44418BEBA7B0009B672 /* LeDevicePickerViewController.m */,
+				96647CCD18C55D69003D7AEC /* LeDevicePickerCallback.h */,
+				960330ED18B6CA1600F6B66E /* LeHelloClientViewController.m */,
+				960330EF18B6CA1600F6B66E /* Images.xcassets */,
+				960330DB18B6CA1600F6B66E /* Supporting Files */,
+				96E5F44618C556C40009B672 /* LeDevicePickerListCell.h */,
+				96E5F44718C556C40009B672 /* LeDevicePickerListCell.m */,
+				96647CD018C7A5FF003D7AEC /* Localizable.strings */,
+				96389C3018C7DBB4004C627E /* Constants.h */,
+			);
+			path = LeHelloClient;
+			sourceTree = "<group>";
+		};
+		960330DB18B6CA1600F6B66E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				960330DC18B6CA1600F6B66E /* LeHelloClient-Info.plist */,
+				960330E018B6CA1600F6B66E /* main.m */,
+				960330E218B6CA1600F6B66E /* LeHelloClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		960330FC18B6CA1600F6B66E /* LeHelloClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				9603310218B6CA1600F6B66E /* LeHelloClientTests.m */,
+				960330FD18B6CA1600F6B66E /* Supporting Files */,
+			);
+			path = LeHelloClientTests;
+			sourceTree = "<group>";
+		};
+		960330FD18B6CA1600F6B66E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				960330FE18B6CA1600F6B66E /* LeHelloClientTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		960330D018B6CA1600F6B66E /* LeHelloClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9603310618B6CA1600F6B66E /* Build configuration list for PBXNativeTarget "LeHelloClient" */;
+			buildPhases = (
+				960330CD18B6CA1600F6B66E /* Sources */,
+				960330CE18B6CA1600F6B66E /* Frameworks */,
+				960330CF18B6CA1600F6B66E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeHelloClient;
+			productName = LeHelloClient;
+			productReference = 960330D118B6CA1600F6B66E /* LeHelloClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+		960330F418B6CA1600F6B66E /* LeHelloClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9603310918B6CA1600F6B66E /* Build configuration list for PBXNativeTarget "LeHelloClientTests" */;
+			buildPhases = (
+				960330F118B6CA1600F6B66E /* Sources */,
+				960330F218B6CA1600F6B66E /* Frameworks */,
+				960330F318B6CA1600F6B66E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				960330FB18B6CA1600F6B66E /* PBXTargetDependency */,
+			);
+			name = LeHelloClientTests;
+			productName = LeHelloClientTests;
+			productReference = 960330F518B6CA1600F6B66E /* LeHelloClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		960330C918B6CA1600F6B66E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LeHelloClient;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Broadcom;
+				TargetAttributes = {
+					960330D018B6CA1600F6B66E = {
+						DevelopmentTeam = G3K3H76EF6;
+					};
+					960330F418B6CA1600F6B66E = {
+						TestTargetID = 960330D018B6CA1600F6B66E;
+					};
+				};
+			};
+			buildConfigurationList = 960330CC18B6CA1600F6B66E /* Build configuration list for PBXProject "LeHelloClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 960330C818B6CA1600F6B66E;
+			productRefGroup = 960330D218B6CA1600F6B66E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				960330D018B6CA1600F6B66E /* LeHelloClient */,
+				960330F418B6CA1600F6B66E /* LeHelloClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		960330CF18B6CA1600F6B66E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96647CD118C7A5FF003D7AEC /* Localizable.strings in Resources */,
+				960330EB18B6CA1600F6B66E /* Main_iPad.storyboard in Resources */,
+				960330F018B6CA1600F6B66E /* Images.xcassets in Resources */,
+				960330E818B6CA1600F6B66E /* Main_iPhone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		960330F318B6CA1600F6B66E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		960330CD18B6CA1600F6B66E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E5F44518BEBA7B0009B672 /* LeDevicePickerViewController.m in Sources */,
+				960330E118B6CA1600F6B66E /* main.m in Sources */,
+				96E5F44818C556C40009B672 /* LeDevicePickerListCell.m in Sources */,
+				960330E518B6CA1600F6B66E /* LeHelloClientAppDelegate.m in Sources */,
+				96E5F44218BE6CF50009B672 /* CustomNavigationController.m in Sources */,
+				960330EE18B6CA1600F6B66E /* LeHelloClientViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		960330F118B6CA1600F6B66E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9603310318B6CA1600F6B66E /* LeHelloClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		960330FB18B6CA1600F6B66E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 960330D018B6CA1600F6B66E /* LeHelloClient */;
+			targetProxy = 960330FA18B6CA1600F6B66E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		960330E618B6CA1600F6B66E /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				960330E718B6CA1600F6B66E /* Base */,
+				96647CD218C7B17C003D7AEC /* en */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		960330E918B6CA1600F6B66E /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				960330EA18B6CA1600F6B66E /* Base */,
+				96647CD318C7B17C003D7AEC /* en */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9603310418B6CA1600F6B66E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9603310518B6CA1600F6B66E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9603310718B6CA1600F6B66E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LeHelloClient/LeHelloClient-Prefix.pch";
+				INFOPLIST_FILE = "LeHelloClient/LeHelloClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9603310818B6CA1600F6B66E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LeHelloClient/LeHelloClient-Prefix.pch";
+				INFOPLIST_FILE = "LeHelloClient/LeHelloClient-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9603310A18B6CA1600F6B66E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LeHelloClient.app/LeHelloClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LeHelloClient/LeHelloClient-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LeHelloClientTests/LeHelloClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9603310B18B6CA1600F6B66E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LeHelloClient.app/LeHelloClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LeHelloClient/LeHelloClient-Prefix.pch";
+				INFOPLIST_FILE = "LeHelloClientTests/LeHelloClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		960330CC18B6CA1600F6B66E /* Build configuration list for PBXProject "LeHelloClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9603310418B6CA1600F6B66E /* Debug */,
+				9603310518B6CA1600F6B66E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9603310618B6CA1600F6B66E /* Build configuration list for PBXNativeTarget "LeHelloClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9603310718B6CA1600F6B66E /* Debug */,
+				9603310818B6CA1600F6B66E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9603310918B6CA1600F6B66E /* Build configuration list for PBXNativeTarget "LeHelloClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9603310A18B6CA1600F6B66E /* Debug */,
+				9603310B18B6CA1600F6B66E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 960330C918B6CA1600F6B66E /* Project object */;
+}

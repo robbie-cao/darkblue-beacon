@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2011 Bluetooth SIG, Inc. All rights reserved. -->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="org.bluetooth.characteristic.map_url" uuid="700A" name="Map URL">
+		<InformativeText>
+			<Abstract>
+				The Map URL characteristic describes the URL that can be used for getting map information related to the premises the device was installed in.
+			</Abstract>
+		</InformativeText>
+	<Value>
+		<Field name="Map URL">
+			<Requirement>Mandatory</Requirement>
+			<Format>utf8s</Format>
+		</Field>
+	</Value>
+</Characteristic>

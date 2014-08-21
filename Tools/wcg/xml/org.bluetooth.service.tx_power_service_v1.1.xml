@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2011 Bluetooth SIG, Inc. All rights reserved. -->
+<Service xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/service.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="org.bluetooth.service.tx_power_service_v1.1" uuid="1804" name="TX Power 1.1" last-modified="2012-11-02" approved="No" >
+   <InformativeText>
+    <Abstract>This service exposes a device’s current transmit power level when in a connection. </Abstract>
+    <Summary>The Tx Power service exposes the current transmit power level of a device when in a connection.</Summary>
+</InformativeText>
+    <Dependencies>
+        <Dependency>This service has no dependencies on other GATT-based services.</Dependency>
+	</Dependencies>
+    <Transports>
+        <Classic>true</Classic>
+        <LowEnergy>true</LowEnergy>
+        <HighSpeed>false</HighSpeed>
+	</Transports>
+    <ErrorCodes></ErrorCodes>
+    <Characteristics>
+        <Characteristic type="org.bluetooth.characteristic.tx_power_level" name="Tx Power Level">
+            <InformativeText>
+                <b>C1:</b>
+                C1:Mandatory for LE or for BR/EDR that supports a single Tx power level only. Excluded if C.2 is supported
+                <p></p>
+			</InformativeText>
+            <Requirement>C1</Requirement>
+            <Properties>
+                <Read>Mandatory</Read>
+                <Write>Excluded</Write>
+                <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Excluded</Notify>
+                <Indicate>Excluded</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+			</Properties>
+		</Characteristic>
+
+        <Characteristic type="org.bluetooth.characteristic.tx_power_level_gfsk" name="EDR Tx Power Level GFSK">
+            <InformativeText>
+              <p>
+                <b></b>
+                Represents the current transmit power level (in dBm) for GFSK modulation on a BR/EDR physical link
+              </p>
+		    </InformativeText>
+            <Requirement> C2:Mandatory if device supports Tx power level for each modulation mode in BR/EDR. Excluded for LE.</Requirement>
+            <Properties>
+                <Read>Mandatory</Read>
+                <Write>Excluded</Write>
+                <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Excluded</Notify>
+                <Indicate>Excluded</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+			</Properties>
+		</Characteristic>
+        <Characteristic type="org.bluetooth.characteristic.tx_power_level" name="EDR Tx Power Level DQPSK">
+            <InformativeText>
+                <p>
+                <b></b>
+               Represents the current transmit power level (in dBm) for DQPSK modulation on a BR/EDR physical link
+              </p>
+		    </InformativeText>
+            <Requirement> C2:Mandatory if device supports Tx power level for each modulation mode in BR/EDR. Excluded for LE.</Requirement>
+            <Properties>
+                <Read>Mandatory</Read>
+                <Write>Excluded</Write>
+                <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Excluded</Notify>
+                <Indicate>Excluded</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+			</Properties>
+		</Characteristic>
+        <Characteristic type="org.bluetooth.characteristic.tx_power_level" name="EDR Tx Power Level 8DPSK">
+            <InformativeText>
+                <p>
+                <b></b>
+                Represents the current transmit power level (in dBm) for 8DPSK modulation on a BR/EDR physical link
+              </p>
+		    </InformativeText>
+            <Requirement> C2:Mandatory if device supports Tx power level for each modulation mode in BR/EDR. Excluded for LE.</Requirement>
+            <Properties>
+                <Read>Mandatory</Read>
+                <Write>Excluded</Write>
+                <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Excluded</Notify>
+                <Indicate>Excluded</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+			</Properties>
+		</Characteristic>  
+        <Characteristic type="org.bluetooth.characteristic.tx_power_level" name="Tx Power Step Table">
+            <InformativeText>
+                <p>
+                <b></b>
+                Represents a table containing transmit output power values (in dBm) for all Tx power steps of each modulation 
+              </p>
+		    </InformativeText>
+            <Requirement> C2:Mandatory if device supports Tx power level for each modulation mode in BR/EDR. Excluded for LE.</Requirement>
+            <Properties>
+                <Read>Mandatory</Read>
+                <Write>Excluded</Write>
+                <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Excluded</Notify>
+                <Indicate>Excluded</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+			</Properties>
+		</Characteristic>  
+	</Characteristics>
+    </Service>

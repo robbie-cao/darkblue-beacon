@@ -1,0 +1,102 @@
+
+/* Class = "IBUILabel"; text = "(no value)"; ObjectID = "1Nz-sZ-zLl"; */
+"1Nz-sZ-zLl.text" = "(no value)";
+
+/* Class = "IBUIButton"; normalTitle = "Select Device"; ObjectID = "2wS-xw-1oK"; */
+"2wS-xw-1oK.normalTitle" = "Select Device";
+
+/* Class = "IBUILabel"; text = "0 dbm"; ObjectID = "3Qs-h5-MZG"; */
+"3Qs-h5-MZG.text" = "0 dbm";
+
+/* Class = "IBUITextView"; text = "rdsafasdf"; ObjectID = "4Jn-gK-0HS"; */
+"4Jn-gK-0HS.text" = "rdsafasdf";
+
+/* Class = "IBUILabel"; text = "Characteristic: Hello input"; ObjectID = "8Jz-0h-dUP"; */
+"8Jz-0h-dUP.text" = "Characteristic: Hello input";
+
+/* Class = "IBUIViewController"; title = "LE Hello Client"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "LE Hello Client";
+
+/* Class = "IBUIButton"; normalTitle = "Read"; ObjectID = "BcJ-TR-Au3"; */
+"BcJ-TR-Au3.normalTitle" = "Read";
+
+/* Class = "IBUILabel"; text = "<Tap to select device>"; ObjectID = "CF7-Wa-CRZ"; */
+"CF7-Wa-CRZ.text" = "<Tap to select device>";
+
+/* Class = "IBUILabel"; text = "(no value)"; ObjectID = "Cpq-u6-SiU"; */
+"Cpq-u6-SiU.text" = "(no value)";
+
+/* Class = "IBUIButton"; normalTitle = "Search For Devices"; ObjectID = "DIO-lL-bFH"; */
+"DIO-lL-bFH.normalTitle" = "Search For Devices";
+
+/* Class = "IBUIButton"; normalTitle = "Clear"; ObjectID = "E8c-VN-NRu"; */
+"E8c-VN-NRu.normalTitle" = "Clear";
+
+/* Class = "IBUIButton"; normalTitle = "Read"; ObjectID = "JfB-tO-bz5"; */
+"JfB-tO-bz5.normalTitle" = "Read";
+
+/* Class = "IBUILabel"; text = "Select \"Allow notifications\" in the drop-down box, then press the white button on the tag to receive a \"Hello\" message."; ObjectID = "MSX-7H-zF0"; */
+"MSX-7H-zF0.text" = "Select \"Allow notifications\" in the drop-down box, then press the white button on the tag to receive a \"Hello\" message.";
+
+/* Class = "IBUILabel"; text = "System ID"; ObjectID = "N1n-Yf-Dcs"; */
+"N1n-Yf-Dcs.text" = "System ID";
+
+/* Class = "IBUIButton"; normalTitle = "Read"; ObjectID = "SVP-C0-3Sh"; */
+"SVP-C0-3Sh.normalTitle" = "Read";
+
+/* Class = "IBUILabel"; text = "Manufacterer name"; ObjectID = "TO2-rd-Zeu"; */
+"TO2-rd-Zeu.text" = "Manufacterer name";
+
+/* Class = "IBUILabel"; text = "Characteristic: Hello configuration"; ObjectID = "U0V-Pd-SXS"; */
+"U0V-Pd-SXS.text" = "Characteristic: Hello configuration";
+
+/* Class = "IBUIButton"; normalTitle = "Disconnect"; ObjectID = "ZKY-hQ-aPf"; */
+"ZKY-hQ-aPf.normalTitle" = "Disconnect";
+
+/* Class = "IBUILabel"; text = "Battery level"; ObjectID = "Zuu-yF-ieZ"; */
+"Zuu-yF-ieZ.text" = "Battery level";
+
+/* Class = "IBUILabel"; text = "Device Name"; ObjectID = "a6D-Lm-M3O"; */
+"a6D-Lm-M3O.text" = "Device Name";
+
+/* Class = "IBUIButton"; normalTitle = "Read"; ObjectID = "bYJ-SK-T0z"; */
+"bYJ-SK-T0z.normalTitle" = "Read";
+
+/* Class = "IBUIButton"; normalTitle = "Cancel"; ObjectID = "cm4-0a-eIf"; */
+"cm4-0a-eIf.normalTitle" = "Cancel";
+
+/* Class = "IBUILabel"; text = "Model number"; ObjectID = "exY-YM-F5e"; */
+"exY-YM-F5e.text" = "Model number";
+
+/* Class = "IBUILabel"; text = "{8ac32d3f-5cb9-4d44-bec2-ee689169f626}"; ObjectID = "fTh-7N-s0c"; */
+"fTh-7N-s0c.text" = "{8ac32d3f-5cb9-4d44-bec2-ee689169f626}";
+
+/* Class = "IBUINavigationItem"; title = "Le Hello Client"; ObjectID = "flY-N9-U4I"; */
+"flY-N9-U4I.title" = "LE Hello Client";
+
+/* Class = "IBUIButton"; normalTitle = "Connect"; ObjectID = "g2b-fT-3UR"; */
+"g2b-fT-3UR.normalTitle" = "Connect";
+
+/* Class = "IBUILabel"; text = "{5e9bf2a8-f93f-4481-a67e-3b2f4a07891a}"; ObjectID = "loQ-Pi-vdt"; */
+"loQ-Pi-vdt.text" = "{5e9bf2a8-f93f-4481-a67e-3b2f4a07891a}";
+
+/* Class = "IBUIButton"; normalTitle = "Write"; ObjectID = "mfB-7T-gnc"; */
+"mfB-7T-gnc.normalTitle" = "Write";
+
+/* Class = "IBUILabel"; text = "(no value)"; ObjectID = "nZN-Rx-XA8"; */
+"nZN-Rx-XA8.text" = "(no value)";
+
+/* Class = "IBUILabel"; text = "(no value)"; ObjectID = "vPx-G2-KJ2"; */
+"vPx-G2-KJ2.text" = "(no value)";
+
+/* Class = "IBUINavigationItem"; title = "Select a Bluetooth LE Device"; ObjectID = "voC-tN-i92"; */
+"voC-tN-i92.title" = "Select a Bluetooth LE Device";
+
+/* Class = "IBUILabel"; text = "aa:bb:cc:dd:ee:ff"; ObjectID = "xBH-Na-8bS"; */
+"xBH-Na-8bS.text" = "aa:bb:cc:dd:ee:ff";
+
+/* Class = "IBUILabel"; text = "Connected"; ObjectID = "z3T-zw-Jcq"; */
+"z3T-zw-Jcq.text" = "Connected";
+
+/* Class = "IBUILabel"; text = "UUID"; ObjectID = "zt1-rE-5f4"; */
+"zt1-rE-5f4.text" = "UUID";

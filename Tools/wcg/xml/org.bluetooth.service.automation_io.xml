@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2011 Bluetooth SIG, Inc. All rights reserved. -->
+<Service xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/service.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Automation IO" type="org.bluetooth.service.automation_io" uuid="1815" last-modified="2012-04-10" approved="No">
+    <InformativeText>
+        <Abstract>
+            The Automation IO Service is used to expose the digital and analog singals of a generic I/O module.
+        </Abstract>
+    </InformativeText>
+    <Dependencies>
+        <Dependency>This service has no dependencies on other GATT-based services.</Dependency>
+    </Dependencies>
+    <GATTRequirements>
+        <Requirement subProcedure="Write Characteristic Value">C1:Mandatory if Digital Output and/or Analog Output are supported.</Requirement>
+        <Requirement subProcedure="Write Without Response">C2:Mandatory if the “write without response” characteristic property is supported for at least one Digital Output and/or Analog Output characteristics (if any available).</Requirement>
+        <Requirement subProcedure="Indications">C3:Mandatory if the “indicate” or “notify” characteristic property respectively is supported for at least one Digital Input, Analog Input or Aggregate Input characteristic.</Requirement>
+        <Requirement subProcedure="Notifications">C3:Mandatory if the “indicate” or “notify” characteristic property respectively is supported for at least one Digital Input, Analog Input or Aggregate Input characteristic.</Requirement>
+        <Requirement subProcedure="Write Characteristic Descriptors">C4:Mandatory if indication or notification is supported or if writable characteristics descriptors are allowed for at least one of the included characteristics.</Requirement>
+    </GATTRequirements>
+    
+    <Transports>
+        <Classic>true</Classic>
+        <LowEnergy>true</LowEnergy>
+    </Transports>
+    <ErrorCodes></ErrorCodes>
+    <Characteristics>
+        <Characteristic name="Digital Input" type="org.bluetooth.characteristic.digital_input">
+            <InformativeText>
+                <b>C1:</b>
+                Optional but at least one of the Digital Input, Digital Output, Analog Input or Analog Output characteristics shall be used. Only one Digital Input characteristic shall be used.
+            </InformativeText>
+            <Requirement>C1</Requirement>
+            <Properties>
+                <Read>Mandatory</Read>
+                <Write>Excluded</Write>
+                <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Optional</Notify>
+                <Indicate>Optional</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+            </Properties>
+            <Descriptors>
+                <Descriptor name="Client Characteristic Configuration" type="org.bluetooth.descriptor.gatt.client_characteristic_configuration">
+                    <Requirement>if_notify_or_indicate_supported</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Optional</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Characteristic Presentation Format" type="org.bluetooth.descriptor.gatt.characteristic_presentation_format">
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Excluded</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Characteristic User Description" type="org.bluetooth.descriptor.gatt.characteristic_user_description">
+                    <InformativeText>
+                        <b>C2:</b>
+                        Writable if writable auxiliaries is set in the Extended Properties descriptor and the Characteristic User Description descriptor is writable).
+                    </InformativeText>
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>C2</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Characteristic Extended Properties" type="org.bluetooth.descriptor.gatt.characteristic_extended_properties">
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Excluded</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Trigger Setting" type="org.bluetooth.descriptor.trigger_setting">
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Optional</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Number of Digitals" type="org.bluetooth.descriptor.number_of_digitals">
+                    <Requirement>Mandatory</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Excluded</Write>
+                    </Properties>
+                </Descriptor>
+            </Descriptors>
+        </Characteristic>
+        <Characteristic name="Digital Output" type="org.bluetooth.characteristic.digital_output">
+            <InformativeText>
+                <b>C2:</b>
+                Optional but least one of the Digital Input, Digital Output, Analog Input or Analog Output characteristics shall be used. Only one Digital Output characteristic shall be used.
+            </InformativeText>
+            <Requirement>C2</Requirement>
+            <Properties>
+                <Read>Excluded</Read>
+                <Write>Mandatory</Write>
+                <WriteWithoutResponse>Optional</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Excluded</Notify>
+                <Indicate>Excluded</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+            </Properties>
+            <Descriptors>
+                <Descriptor name="Characteristic User Description" type="org.bluetooth.descriptor.gatt.characteristic_user_description">
+                    <InformativeText>
+                        <b>C1:</b>
+                        Writable if writable auxiliaries is set in the Extended Properties descriptor and the Characteristic User Description descriptor is writable).
+                    </InformativeText>
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>C1</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Number of Digitals" type="org.bluetooth.descriptor.number_of_digitals">
+                    <Requirement>Mandatory</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Excluded</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Characteristic Extended Properties" type="org.bluetooth.descriptor.gatt.characteristic_extended_properties">
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Excluded</Write>
+                    </Properties>
+                </Descriptor>
+            </Descriptors>
+        </Characteristic>
+        <Characteristic name="Analog Input" type="org.bluetooth.characteristic.analog_input">
+            <InformativeText>
+                <b>C3:</b>
+                Optional but at least one of the Digital Input, Digital Output, Analog Input or Analog Output characteristics shall be used. One or more Analog Input and Analog Output characteristics may be used.
+            </InformativeText>
+            <Requirement>C3</Requirement>
+            <Properties>
+                <Read>Mandatory</Read>
+                <Write>Excluded</Write>
+                <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Optional</Notify>
+                <Indicate>Optional</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+            </Properties>
+            <Descriptors>
+                <Descriptor name="Client Characteristic Configuration" type="org.bluetooth.descriptor.gatt.client_characteristic_configuration">
+                    <Requirement>if_notify_or_indicate_supported</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Optional</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Characteristic Presentation Format" type="org.bluetooth.descriptor.gatt.characteristic_presentation_format">
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Excluded</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Characteristic User Description" type="org.bluetooth.descriptor.gatt.characteristic_user_description">
+                    <InformativeText>
+                        <b>C2:</b>
+                        Writable if writable auxiliaries is set in the Extended Properties descriptor and the Characteristic User Description descriptor is writable).
+                    </InformativeText>
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>C2</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Trigger Setting" type="org.bluetooth.descriptor.trigger_setting">
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Optional</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Characteristic Extended Properties" type="org.bluetooth.descriptor.gatt.characteristic_extended_properties">
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Excluded</Write>
+                    </Properties>
+                </Descriptor>
+            </Descriptors>
+        </Characteristic>
+        <Characteristic name="Analog Output" type="org.bluetooth.characteristic.analog_output">
+            <InformativeText>
+                <b>C3:</b>
+                Optional but at least one of the Digital Input, Digital Output, Analog Input or Analog Output characteristics is used. One or more Analog Input and Analog Output characteristics may be used.
+            </InformativeText>
+            <Requirement>C3</Requirement>
+            <Properties>
+                <Read>Excluded</Read>
+                <Write>Mandatory</Write>
+                <WriteWithoutResponse>Optional</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Excluded</Notify>
+                <Indicate>Excluded</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+            </Properties>
+            <Descriptors>
+                <Descriptor name="Characteristic User Description" type="org.bluetooth.descriptor.gatt.characteristic_user_description">
+                    <InformativeText>
+                        <b>C1:</b>
+                        Writable if writable auxiliaries is set in the Extended Properties descriptor and the Characteristic User Description descriptor is writable).
+                    </InformativeText>
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>C1</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Characteristic Extended Properties" type="org.bluetooth.descriptor.gatt.characteristic_extended_properties">
+                     <InformativeText>
+                        <b>C1:</b>
+                        Writable if writable auxiliaries is set in the Extended Properties descriptor and the Characteristic User Description descriptor is writable).
+                    </InformativeText>
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>C1</Write>
+                    </Properties>
+                </Descriptor>
+            </Descriptors>
+        </Characteristic>
+        <Characteristic name="Aggregate Input" type="org.bluetooth.characteristic.aggregate_input">
+            <Requirement>Optional</Requirement>
+            <Properties>
+                <Read>Mandatory</Read>
+                <Write>Excluded</Write>
+                <WriteWithoutResponse>Excluded</WriteWithoutResponse>
+                <SignedWrite>Excluded</SignedWrite>
+                <ReliableWrite>Excluded</ReliableWrite>
+                <Notify>Optional</Notify>
+                <Indicate>Optional</Indicate>
+                <WritableAuxiliaries>Excluded</WritableAuxiliaries>
+                <Broadcast>Excluded</Broadcast>
+            </Properties>
+            <Descriptors>
+                <Descriptor name="Client Characteristic Configuration" type="org.bluetooth.descriptor.gatt.client_characteristic_configuration">
+                    <Requirement>if_notify_or_indicate_supported</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Optional</Write>
+                    </Properties>
+                </Descriptor>
+                <Descriptor name="Trigger Setting" type="org.bluetooth.descriptor.trigger_setting">
+                    <Requirement>Optional</Requirement>
+                    <Properties>
+                        <Read>Mandatory</Read>
+                        <Write>Optional</Write>
+                    </Properties>
+                </Descriptor>
+            </Descriptors>
+        </Characteristic>
+    </Characteristics>
+</Service>

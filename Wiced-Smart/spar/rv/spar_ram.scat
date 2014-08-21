@@ -1,0 +1,41 @@
+//#define SRAM_BEGIN              0x00200000
+//#define SRAM_LEN                0x0000F000
+//#define SRAM_END	            (SRAM_BEGIN + SRAM_LEN)
+//#define PATCH_TABLE_LEN         0x00000100
+//#define PATCH_CODE_LEN          0x00004000
+
+//#define PATCH_TABLE_BEGIN       (SRAM_END - PATCH_TABLE_LEN)
+//#define IROM_BEGIN              (PATCH_TABLE_BEGIN - PATCH_CODE_LEN)       
+//#define IROM_LEN                (PATCH_CODE_LEN)
+
+CM3_Ver1 IRAM_BEGIN IRAM_LEN
+{
+    SPAR_INIT_AREA IRAM_BEGIN
+    {
+       spar_setup.o (spar_setup)
+    }
+    
+    SPAR_CODE_AREA +0
+    {
+       .ANY(.app_init_code)
+       * (+RO)
+    }
+
+#include "spar_ram_overlays.scat"
+
+    SPAR_DRAM_RW_AREA +0
+    {
+        * (+RW)
+    }
+    SPAR_DRAM_ZI_AREA +0
+
+    {
+        * (+ZI)
+    }
+
+    // Mark the end of all sections in this spar.
+    first_free_section_in_spar_NV_RAM +0
+    {
+    }
+}
+ 

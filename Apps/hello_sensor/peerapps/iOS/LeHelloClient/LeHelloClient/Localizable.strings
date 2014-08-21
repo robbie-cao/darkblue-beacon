@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  LeHelloClient
+  Copyright (c) 2014 Broadcom. All rights reserved.
+*/
+//DevicePicker
+"SCAN_STATE_LABEL_STOPPED"="Search for Device";
+"SCAN_STATE_LABEL_STARTED"="Stop Searching";
+"UNKNOWN_DEVICE_NAME"="(Device name not available)";
+"LABEL_DBM"="%@ dbm";
+
+//Main
+"TEXT_NO_DEVICES"="<Tap 'Select Device' to begin>";
+"VALUE_NO_VALUE"="(no value)";
+"VALUE_CONNECTION_STATE_CONNECTED"="Connected";
+"VALUE_CONNECTION_STATE_DISCONNECTED"="Disconnected";
+
+"VALUE_NO_SEND"="Do not send";
+"VALUE_ALLOW_NOTIFICATIONS"="Allow notifications";
+"VALUE_ALLOW_INDICATIONS"="Allow indications";

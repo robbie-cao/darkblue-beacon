@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<BLE_Smart_Designer>
+<DeviceSettings>
+        <Name>ibeacon_managed</Name>
+  <Appearance>Generic Tag</Appearance>
+        <Button>true</Button>
+        <UART>false</UART>
+        <Timer1Sec>false</Timer1Sec>
+        <LED>false</LED>
+        <SPI>false</SPI>
+        <Buzzer>false</Buzzer>
+        <Battery>false</Battery>
+</DeviceSettings>
+    <Service predefined="true">
+        <Name>Generic Access</Name>
+        <Uuid>1800</Uuid>
+        <Description>The generic_access service contains generic information about the device. All available Characteristics are readonly.</Description>
+        <Characteristic mandatory="true" predefined="true">
+            <Name>Device Name</Name>
+            <Uuid>2A00</Uuid>
+            <Description>The Information included in this page is informative. The normative descriptions are contained in the applicable specification.</Description>
+            <DataType>org.bluetooth.characteristic.gap.device_name</DataType>
+            <Size>15</Size>
+            <InitialValue>ibeacon_managed</InitialValue>
+            <Properties>
+                <Read type="Mandatory">true</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Excluded">false</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+        <Characteristic mandatory="true" predefined="true">
+            <Name>Appearance</Name>
+            <Uuid>2A01</Uuid>
+            <Description>The external appearance of this device. The values are composed of a category (10-bits) and sub-categories (6-bits).</Description>
+            <DataType>org.bluetooth.characteristic.gap.appearance</DataType>
+            <Size>2</Size>
+            <InitialValue>00 02</InitialValue>
+            <Properties>
+                <Read type="Mandatory">true</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Excluded">false</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+    </Service>
+    <Service predefined="true">
+        <Name>Generic Attribute</Name>
+        <Uuid>1801</Uuid>
+        <Description>Generic Attribute</Description>
+    </Service>
+    <Service predefined="false">
+        <Name>ibeacon_managed</Name>
+        <Uuid>b1 a8 2c 30 cf f8 41 03 ab 07 61 c8 7d d3 f3 72</Uuid>
+        <Description>Vendor Specific Service: ibeacon_managed</Description>
+        <Characteristic mandatory="false" predefined="false">
+            <Name>company_uuid</Name>
+            <Uuid>c3 70 01 a8 63 4b 44 7d 8e 6b 0c a0 38 e1 cb ab</Uuid>
+            <Description>Vendor Specific Characteristic: ibeacon_managed</Description>
+            <DataType/>
+            <Size>16</Size>
+            <InitialValue/>
+            <Properties>
+                <Read>true</Read>
+                <Notify>false</Notify>
+                <Indicate>false</Indicate>
+                <Write>true</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <SignedWrite>false</SignedWrite>
+                <ReliableWrite>false</ReliableWrite>
+                <WritableAuxiliaries>false</WritableAuxiliaries>
+                <Broadcast>false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>true</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+        <Characteristic mandatory="false" predefined="false">
+            <Name>major_id</Name>
+            <Uuid>6e 0c 91 ac 8f 5d 43 c3 8e 00 4d 54 dc a2 b8 26</Uuid>
+            <Description>Vendor Specific Characteristic: ibeacon_managed</Description>
+            <DataType/>
+            <Size>2</Size>
+            <InitialValue/>
+            <Properties>
+                <Read>true</Read>
+                <Notify>false</Notify>
+                <Indicate>false</Indicate>
+                <Write>true</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <SignedWrite>false</SignedWrite>
+                <ReliableWrite>false</ReliableWrite>
+                <WritableAuxiliaries>false</WritableAuxiliaries>
+                <Broadcast>false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>true</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+        <Characteristic mandatory="false" predefined="false">
+            <Name>minor_id</Name>
+            <Uuid>a8 f6 71 d3 2e 30 49 4e a7 69 76 2a 72 a1 ce 0a</Uuid>
+            <Description>Vendor Specific Characteristic: ibeacon_managed</Description>
+            <DataType/>
+            <Size>2</Size>
+            <InitialValue/>
+            <Properties>
+                <Read>true</Read>
+                <Notify>false</Notify>
+                <Indicate>false</Indicate>
+                <Write>true</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <SignedWrite>false</SignedWrite>
+                <ReliableWrite>false</ReliableWrite>
+                <WritableAuxiliaries>false</WritableAuxiliaries>
+                <Broadcast>false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>true</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+        <Characteristic mandatory="false" predefined="false">
+            <Name>measured_power</Name>
+            <Uuid>cd da 8f 65 f0 62 4b 02 bc ec 16 e0 9f 92 05 e2</Uuid>
+            <Description>Vendor Specific Characteristic: ibeacon_managed</Description>
+            <DataType/>
+            <Size>1</Size>
+            <InitialValue/>
+            <Properties>
+                <Read>true</Read>
+                <Notify>false</Notify>
+                <Indicate>false</Indicate>
+                <Write>true</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <SignedWrite>false</SignedWrite>
+                <ReliableWrite>false</ReliableWrite>
+                <WritableAuxiliaries>false</WritableAuxiliaries>
+                <Broadcast>false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>true</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+    </Service>
+</BLE_Smart_Designer>

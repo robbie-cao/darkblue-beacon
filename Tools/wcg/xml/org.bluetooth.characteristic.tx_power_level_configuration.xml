@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2011 Bluetooth SIG, Inc. All rights reserved. -->
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="org.bluetooth.characteristic.tx_power_level_configuration" uuid="7008" name="Tx Power Level Configuration">
+	<InformativeText>
+		<Abstract>
+			The Tx Power Level Configuration characteristic shall be used to set and expose the transmission power the device uses.
+		</Abstract>
+	</InformativeText>
+	<Value>
+		<Field name="Tx Power Level Configuration">
+			<Requirement>Mandatory</Requirement>
+			<Format>sint8</Format>
+		</Field>
+	</Value>
+</Characteristic>

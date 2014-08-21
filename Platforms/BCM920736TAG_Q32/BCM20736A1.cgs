@@ -1,0 +1,56 @@
+################################################################################
+##
+## Start 20736A1 Platform configurtion
+##
+################################################################################
+
+################################################################################
+#  ADC configuration
+################################################################################
+ENTRY "Adc Driver Configuration"
+{
+    "RC Calibration for ADC" = 0xc
+    "Bandgap Temperature Constant" = 0
+    "Bandgap Output Current Trim" = 0x6
+    "Bandgap Noise Fiter Constant" = 0x3
+    "Dither Power Down" = 0
+
+    "IDAC Trimming 2nd OPAMP" = 0x6
+    "IDAC Trimming 1st OPAMP" = 0x6
+    "Comparator Reference Voltage" = "650mV"
+    "OPAMP Reference Voltage" = "500mV"
+    "OPAMP Power Down" = "Power ON"
+    "Sampling Clock Polarity" = "Positive Edge"
+    "Dither Clock Polarity"   = "Positive Edge"
+    "Comparator Bias Current Control" = "4.3uA"
+
+    "ADC Power Up Delay" = 20
+    "Calibration Reference Channel" = "ADC_INPUT_VDD_CORE"
+    "Calibration Reading Ave Count" = 8
+    "Input Range" = "0V-3.6V"
+
+    "Reference MicroVoltage"    = 1200
+    "ADCBandgapDelta[0]" = 0
+    "ADCBandgapDelta[1]" = 0
+    "ADCBandgapDelta[2]" = 0
+}
+
+################################################################################
+#  Low power configuration
+################################################################################
+ENTRY "Sleep Mode Configuration"
+{
+    "Sleep mode" = "HIDD" 
+    "Sleep enable" = 1
+}
+
+ENTRY "BLE App Hid-off config"
+{
+    "Hid-off allowed" = 0x17
+}
+
+################################################################################
+##
+## End 20736A1 Platform configurtion
+##
+################################################################################

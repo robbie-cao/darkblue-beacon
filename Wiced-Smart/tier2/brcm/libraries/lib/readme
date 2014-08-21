@@ -1,0 +1,244 @@
+------------------------------------------------------------------
+thread_and_mem_mgmt
+------------------------------------------------------------------
+This library provides some additional API for application thread
+and memory pool management
+
+Dependencies:
+
+
+Resources
+RAM: ~100 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+ibeacon
+------------------------------------------------------------------
+The iBeacon library exposes ibeacon_start and ibeacon_stop functions.
+The caveat is that iBeacon functionality need to be combined with the
+advertisements requested by the application.  To support that when ibeacon
+is started, the function checks advertisements parameters from the application.
+It configures advertisement interval to be smaller than requested by the
+application and calculates how many ibeacons need to be sent before
+application advertisement is sent, or how many application advertisement need
+to be send between 2 iBeacons.  For example if application advertisement interval
+is 1280 slots there should be 1280 / 160 (100 msec) = 8 iBeacons followed by 1
+application advertisement.  So we will need to start advertisement with an
+interval 1280 / ((1280 / 160) + 1) = 142 slots.  (see more comments inline)
+To modify the content of the advertisement packet, application registers a
+callback to be notified before every advertisement event.
+
+ibeacon_start function also registers to receive HCI events.  When it detects
+that application stopped/started or changed advertisement parameters the
+parameters of the actual advertisement are recalculated.
+
+Dependencies:
+Depends on additional_advertisement_control.a
+
+Resources
+RAM: ~100 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+blecen_read_dbg_uart_on_timeout
+------------------------------------------------------------------
+This patches the central sample applciation in the ROM to replace
+the fine tier callback to also read the peripheral uart.
+
+Resources
+RAM: ~172 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+a4wp_ptu_itx_fine_tune_init
+------------------------------------------------------------------
+This provides an override of tuning ITX for BRCM A4WP reference implementation by registering call back for CSAEvent Filter from idle thread.
+Call back is triggered approximatly 1.25 ms. a4wp_ptu_fine_tune_cb() in a4wp_ptu.c will handle the callback.
+
+Resources
+RAM: ~84 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+a4wp_hal_api
+------------------------------------------------------------------
+This provides a driver API to access the BRCM PMU chip over the I2C interface.
+
+Resources
+RAM: ~1180 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+bt_clock_based_periodic_timer
+------------------------------------------------------------------
+A Bluetooth clock based periodic timer that can enqueue the
+callback in the application thread context. This is a more accurate
+timer than the software timers and is unaffected by sleep and wake
+cycles. Any jitter, if present is generally due to higher priority
+Bluetooth tasks/interrupts.
+
+The resolution of the timer is 1.25mS (one Bluetooth frame) and it
+is recommended that the period of the timer be kept at 5mS or more.
+Shorter timeouts will adversely affect Bluetooth performance.
+
+Resources:
+RAM: ~380 bytes.
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+agilent_motion_sensor_common_driver
+------------------------------------------------------------------
+This is an optional driver for Agilent motion sensors. There is a
+common driver component that supports a number of sensors from the
+same family and also an implementation of the AG7530 driver.
+
+Resources:
+RAM: ~1.1 KB
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+application_poll_notification
+------------------------------------------------------------------
+This provides an implementation of a mechanism that will allow
+the application to be polled at the same rate as a connection
+event with a constant offset of 1.25mS (or a multiple of it).
+This is useful when data needs to be collected from peripherals
+just-in-time before delivery to the central.
+
+Resources
+RAM: ~700 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+hw_timer
+------------------------------------------------------------------
+This is a patch that provides an accurate 1-shot timer for HID applications.
+
+
+Resources
+
+RAM: ~84  Bytes
+
+------------------------------------------------------------------
+additional_advertisement_control
+------------------------------------------------------------------
+Provides some additional advertisiment contorol features:
+
+1. The app can choose to skip an RF activity (ADV/connection event)
+   when a configured GPIO is asserted. Useful when a very basic
+   coex is required for a beacon-like application. We don't want
+   to use this when connected. If RF activity has already started
+   before the GPIO is asserted externally, then RF activity will
+   continue normally.
+2. The app can optionally choose to get notified before and after
+   an advertisement event.
+
+Resources
+RAM: ~700 bytes with both batches or only #2. Less for #1 only.
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+i2c_bit_bang
+------------------------------------------------------------------
+This provides i2c bit bang with GPIO gennerating clock and SDA line remains unaltered
+Resources
+RAM: ~490 bytes
+------------------------------------------------------------------
+------------------------------------------------------------------
+additional_gatt_apis
+------------------------------------------------------------------
+The patches for the missing ATT APIs
+Resources
+RAM: <100 bytes
+------------------------------------------------------------------
+------------------------------------------------------------------
+LowPowerAlgorithm
+------------------------------------------------------------------
+The patches for low power algorithm
+Resources
+RAM: <100 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+rtc_api
+------------------------------------------------------------------
+Provides some extra API for the RTC HW module. Also includes some
+missing register initialization. This is a required patch when RTC
+is also used by the app.
+
+Resources
+RAM: 220 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+central_role_patches
+------------------------------------------------------------------
+All mandatory patches for applications that need to support central
+role.
+
+Resources
+RAM: 
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+get_nv_info
+------------------------------------------------------------------
+Allows the app to get the type of NV (EEPROM/SF) at runtime and
+allows the app to also estimate the size in kilobytes.
+
+Resources
+RAM:
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+enable_spiffy1_i2c_interop
+------------------------------------------------------------------
+Since SPIFFY1 SCLK and MOSI are the same as I2C SCL and SDA, an
+application that uses Serial Flash for NV storage and I2C sensors
+should include this patch so that the FW reconfigures the IO pins
+for either SPI or I2C.
+
+Note that you will also need some external circuitry to isolate
+the I2C slave from SPI transactions. For ex. Use a switch between
+the SCLK-SCL/MOSI-SDA lines and the I2C slave with the CS line
+going into Serial Flash as the output enable signal of the switch.
+So, when the SF is being accessed, CS will be low and so the buffer
+output will be disabled isolating the I2C slave from the bus.
+
+This patch is mutually exclusive of configure_i2c patch.
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+bd_addr_control
+------------------------------------------------------------------
+Allows the app to set Bluetooth device to a static random address
+on boot and optionally commit it to NV RAM.
+
+Resources
+RAM: ~100 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+rf_cw_test_api
+------------------------------------------------------------------
+Includes API to run RF carrier wave tests for conformance testing.
+
+Dependencies:
+
+
+Resources
+RAM: ~100 bytes
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+long_characteristic_support
+------------------------------------------------------------------
+Provides some additional bleprofile API:
+
+1. Read characteristics larger than ATT_MTU.
+2. Write to characteristics larger than ATT_MTU.
+
+Resources
+RAM: RAM footprint of only the functions used by the app.
+------------------------------------------------------------------
+

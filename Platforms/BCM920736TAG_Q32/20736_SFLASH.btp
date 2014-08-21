@@ -1,0 +1,50 @@
+DevicePreset "20736 Serial Flash"
+{
+	ConfigFSOffset = 0
+	DLReadWriteMode = "Cortex M3 HCI"
+	DLWriteVerifyMode = "Write and verify"
+	DLMaxWriteSize = 251
+	DLSectorEraseMode = "Chip erase"
+	DLDTRReset = 0
+	DLPostResetDelay_ms = 100
+	DLAutobaud = 0
+	DLAutobaudRepeat = 1
+	DLAutobaudRepeatDelay_ms = 200
+	DLWaitForLaunchAnnounce = 0
+	DLConfigReprogramIF_PLL = 0
+	DLUsbBulkPipe = 0
+	DLMinidriver = 1
+	DLMinidriverPathUSB = "[MINIDRIVERS]\20732\usb.hex"
+	DLMinidriverPathNET = "[MINIDRIVERS]\2072\uart.hex"
+	DLMinidriverPathSDIO = "[MINIDRIVERS]\2072\sdio.hex"
+	DLMinidriverPathUPRX = "[MINIDRIVERS]\20732\uart.hex"
+	DLMinidriverPathUART = "[MINIDRIVERS]\20732\uart.hex"
+	DLFirmware = 0
+	DLFirmwareTargeting = "Standard"
+	DLConfig = 1
+	DLConfigTargeting = "EEPROM"
+	ConfigPath = "[BTP_FOLDER]\A_20732A0-hello_sensor-rom-ram-spar.cgs"
+	DLConfigFixedHeader = 1
+	DLConfigFixedHeaderFromBurnImage = 0
+	DLConfigOmitRF_PLL = 1
+	DLConfigIncludeChargerConfig = 0
+	DLConfigDFUKey = 4294967295
+	DLConfigCrystalFreqMHzX10000 = 240000
+	DLConfigOutputPowerAdjust = 40
+	DLConfigImpedanceMatchTuning = 31
+	DLConfigSerialControlBaudRate = 115200
+	DLConfigEEPROMAccessSpeed = 100
+	DLConfigVSOffset = 0
+	ConfigDSLocation = 16384
+	DLConfigSSLocation = 0
+	DLConfigIncludeBTWSecurityKey = 0
+	DLConfigVSLocation = 8192
+	DLConfigVSLength = 4096
+	DLConfigRemoteDeviceCount = 0
+	DLConfigBD_ADDRBase = "20736A1*****"
+	DLConfigFixedBD_ADDRFlag = "Can change"
+	OTAFWUAckAllRecords = 0
+	OTAFWUUpdateFirmware = 1
+	OTAFWUUpdateConfig = 1
+}
+

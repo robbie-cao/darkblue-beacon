@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<BLE_Smart_Designer>
+    <DeviceSettings>
+        <Name>line-cook-w-names</Name>
+        <Appearance>Unknown</Appearance>
+        <Button>true</Button>
+        <UART>true</UART>
+        <Timer1Sec>false</Timer1Sec>
+        <LED>true</LED>
+        <SPI>false</SPI>
+        <Buzzer>false</Buzzer>
+        <Battery>false</Battery>
+        <FineTimer>12</FineTimer>
+        <MaxBondedDevices>4</MaxBondedDevices>
+        <OverTheAirUpgrade>
+            <Id>45039</Id>
+            <MajorVersion>1</MajorVersion>
+            <MomprVersion>0</MomprVersion>
+        </OverTheAirUpgrade>
+    </DeviceSettings>
+    <Service predefined="true">
+        <Name>Generic Access</Name>
+        <Uuid>1800</Uuid>
+        <Description>The generic_access service contains generic information about the device. All available Characteristics are readonly.</Description>
+        <Characteristic mandatory="true" predefined="true">
+            <Name>Device Name</Name>
+            <Uuid>2A00</Uuid>
+            <Description>The Information included in this page is informative. The normative descriptions are contained in the applicable specification.</Description>
+            <DataType>org.bluetooth.characteristic.gap.device_name</DataType>
+            <Size>17</Size>
+            <InitialValue>line-cook-w-names</InitialValue>
+            <Properties>
+                <Read type="Mandatory">true</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Excluded">false</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+        <Characteristic mandatory="true" predefined="true">
+            <Name>Appearance</Name>
+            <Uuid>2A01</Uuid>
+            <Description>The external appearance of this device. The values are composed of a category (10-bits) and sub-categories (6-bits).</Description>
+            <DataType>org.bluetooth.characteristic.gap.appearance</DataType>
+            <Size>2</Size>
+            <InitialValue>00 00</InitialValue>
+            <Properties>
+                <Read type="Mandatory">true</Read>
+                <Write type="Excluded">false</Write>
+                <WriteWithoutResponse type="Excluded">false</WriteWithoutResponse>
+                <SignedWrite type="Excluded">false</SignedWrite>
+                <ReliableWrite type="Excluded">false</ReliableWrite>
+                <Notify type="Excluded">false</Notify>
+                <Indicate type="Excluded">false</Indicate>
+                <WritableAuxiliaries type="Excluded">false</WritableAuxiliaries>
+                <Broadcast type="Excluded">false</Broadcast>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>false</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+        </Characteristic>
+    </Service>
+    <Service predefined="true">
+        <Name>Generic Attribute</Name>
+        <Uuid>1801</Uuid>
+        <Description>Generic Attribute</Description>
+    </Service>
+    <Service predefined="false">
+        <Name>Line Cook Cooking Step</Name>
+        <Uuid>cf 15 fe e0 4a e6 44 7f 8b 44 57 1f d8 44 38 f2</Uuid>
+        <Description>Line Cook Cooking Step</Description>
+        <Characteristic mandatory="false" predefined="false">
+            <Name>Cooking Step</Name>
+            <Uuid>f9 a8 b1 1a 10 6a 43 ea b2 82 18 9a 9c c3 9f 51</Uuid>
+            <Description>Vendor Specific Characteristic: line-cook-w-names</Description>
+            <DataType/>
+            <Size>10</Size>
+            <InitialValue>ff ff ff ff ff ff ff ff ff ff </InitialValue>
+            <Properties>
+                <Read>true</Read>
+                <Notify>true</Notify>
+                <Indicate>true</Indicate>
+                <Write>true</Write>
+            </Properties>
+            <Permissions>
+                <Read>true</Read>
+                <Write>true</Write>
+                <WriteWithoutResponse>false</WriteWithoutResponse>
+                <AuthenticatedRead>false</AuthenticatedRead>
+                <AuthenticatedWrite>false</AuthenticatedWrite>
+            </Permissions>
+            <UserDescription>
+                <Value>Cooking Step</Value>
+                <Permissions>
+                    <Read>true</Read>
+                    <Write>false</Write>
+                    <WriteWithoutResponse>false</WriteWithoutResponse>
+                    <AuthenticatedRead>false</AuthenticatedRead>
+                    <AuthenticatedWrite>false</AuthenticatedWrite>
+                </Permissions>
+            </UserDescription>
+        </Characteristic>
+    </Service>
+</BLE_Smart_Designer>

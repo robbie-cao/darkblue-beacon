@@ -1,0 +1,13 @@
+CHIP                       := 20736
+CHIP_REV                   := A1
+BASE_LOC                   ?= rom
+SPAR_LOC                   ?= ram
+TOOLCHAIN                  ?= Wiced
+CONFIG_DEFINITION          ?= ConfigDef20732_ab.hdf
+PLATFORM_NV                ?= EEPROM
+PLATFORM_STORAGE_BASE_ADDR := 0xFF000000
+PLATFORM_BOOTP             := 20736_$(PLATFORM_NV).btp
+PLATFORM_MINIDRIVER        := uart_DISABLE_EEPROM_WP_PIN1.hex
+PLATFORM_CONFIGS           := BCM20736A1.cgs
+PLATFORM_IDFILE            := BCM20736A1_IDFILE.txt
+PLATFORM_BAUDRATE          := 115200

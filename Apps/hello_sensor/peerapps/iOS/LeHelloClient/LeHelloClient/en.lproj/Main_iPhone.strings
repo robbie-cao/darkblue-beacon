@@ -1,0 +1,21 @@
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "Fci-ze-Job"; */
+"Fci-ze-Job.text" = "Label";
+
+/* Class = "IBUILabel"; text = "aa:bb:cc:dd:ee:ff"; ObjectID = "HpJ-6V-pLe"; */
+"HpJ-6V-pLe.text" = "aa:bb:cc:dd:ee:ff";
+
+/* Class = "IBUILabel"; text = "Connected"; ObjectID = "QsT-Ed-m1v"; */
+"QsT-Ed-m1v.text" = "Connected";
+
+/* Class = "IBUILabel"; text = "<Tap to select a device>"; ObjectID = "RoK-Ch-gtz"; */
+"RoK-Ch-gtz.text" = "<Tap to select a device>";
+
+/* Class = "IBUIButton"; normalTitle = "Connect"; ObjectID = "cho-O5-hMI"; */
+"cho-O5-hMI.normalTitle" = "Connect";
+
+/* Class = "IBUIButton"; normalTitle = "Disconnect"; ObjectID = "hwO-zd-3X5"; */
+"hwO-zd-3X5.normalTitle" = "Disconnect";
+
+/* Class = "IBUINavigationItem"; title = "LE Hello Client"; ObjectID = "vQo-pT-AwB"; */
+"vQo-pT-AwB.title" = "LE Hello Client";

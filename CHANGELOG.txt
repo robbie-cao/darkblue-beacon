@@ -1,0 +1,107 @@
+=====================================================================
+Broadcom WICED Smart Software Development Kit - CHANGELOG
+=====================================================================
+
+Changes for WICED-Smart-SDK-2.1.0
+--------------------------------------------------
+* Added support for Segger J-Link debugger; updated debug configurations in Eclipse.
+	- Uses Segger J-Link GDB server. See pwm_tones sample app for an example.
+* New features in patch libraries.
+* Updated most sample apps with bug fixes, documentation and newer code.
+* Updated some download tools.
+* Added new sample applications for:
+   - myBeacon (advertiser which allows changing contents of advertisements)
+   - iBeacon device
+   - iBeacon Managed device (iBeacon which allows over the air configuration)
+   - Secure Over the Air Firmware Upgrade
+   - Long Characteristic Sample
+   - Sample app to use external 32KHz LPO and the RTC for timed wake from deep sleep.
+
+Changes for WICED-Smart-SDK-2.0.0
+--------------------------------------------------
+* Branched out and updated SDK to support BCM20732A1, BCM20736A1 and BCM20737A1 SOCs only.
+* Updated samples to work with 2073xA1 family of SOCs.
+* Added new sample applications for:
+   - Testing data transfer speed/throughput (speed_test)
+   - Wearables (watch) sample that includes:
+     . Apple Notification Center Service
+     . Find Me client
+     . Time client
+     . HID service
+   - PWM tones
+* Turned app code compression ON when storage is EEPROM to speed up boot and reduce EEPROM footprint.
+* Added WICED-Smart Designer plugin to Eclipse.
+* Added trace-viewer plugin to Eclipse.
+* Application download speed improvements.
+* Minor usability improvements.
+* Added optional patches and libraries that an application can link in.
+	 . See Wiced-Smart/tier2/brcm/libraries/lib/readme and Wiced-Smart/tier2/brcm/libraries/inc
+	 . See mybeacon sample app makefile.mk for an example on usage.
+* Updated documentation.
+
+
+Changes for WICED-Smart-SDK-1.1.0
+--------------------------------------------------
+* Updated patch set to the latest release (#58).
+* Added new sample applications for:
+   - Over The Air Firmware upgrade (ota_firmware_upgrade)
+   - Firmware upgrade over peripheral uart (uart_firmware_upgrade)
+   - SPI master (pressure_sensor and spi_comm_master).
+   - SPI slave (spi_comm_slave).
+   - I2C connected sensor (temperature_sensor)
+   - Sample beacon device
+* Application code overlay support (see proximity_plus for sample).
+* Fixed a number of bugs in application code.
+* Added support for downloading application to EEPROM or SPI Serial Flash.
+* Updated conversion and download tools to latest version.
+* Added new and updated existing documentation
+
+
+Changes for WICED-Smart-SDK-1.0.1
+--------------------------------------------------
+* Updated Quick Start Guide
+* Addressed tag detection issue
+* Added support for downloading application via a specific UART port
+
+
+Changes for WICED-Smart-SDK-1.0.0
+--------------------------------------------------
+* Added make target and instructions for recovering bricked target platform
+* Added BCM920732TAG_Q32 hardware user manual
+* Updated quick start guide
+* Addressed blood_pressure_monitor_plus timeout issue
+* Removed driver installation
+
+
+Changes for WICED-Smart-SDK-0.3.1
+--------------------------------------------------
+* Added the WICED Smart SDK Quickstart Guide
+
+
+Changes for WICED-Smart-SDK-0.3.0
+--------------------------------------------------
+* Integrated adk-A_20732A0-001.001.013.0046.0000 into the WICED Smart SDK 
+
+
+Changes for WICED-Smart-SDK-0.2.2
+--------------------------------------------------
+* Added automatic driver installation support to WICED Smart IDE installer
+
+
+Changes for WICED-Smart-SDK-0.2.1
+--------------------------------------------------
+* Addressed issue with make targets unable to build application out of the box
+* Changed WICED Smart IDE default install location to user application data folder
+
+
+Changes for WICED-Smart-SDK-0.2.0
+--------------------------------------------------
+* Added more example applications
+* Moved external API to top-level include directory
+* Various usability improvements
+
+
+Changes for WICED-Smart-SDK-0.1.0
+--------------------------------------------------
+* Initial version
+  - Supports building Bluetooth Low Energy apps on Windows/Linux/OSX

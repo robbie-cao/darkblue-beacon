@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="0.1007058781">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.1007058781" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration buildProperties="" description="" id="0.1007058781" name="Release" parent="org.eclipse.cdt.build.core.prefbase.cfg">
+					<folderInfo id="0.1007058781." name="/" resourcePath="">
+						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.644640554" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
+							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.644640554.684788357" name=""/>
+							<builder command="${workspace_loc:/WICED-Smart-SDK}/make.exe" enabledIncrementalBuild="true" id="org.eclipse.cdt.build.core.settings.default.builder.905420131" incrementalBuildTarget="${ConfigName}" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.1731943722" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.935171526" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1811145801" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.1607039565" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1085232674" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.623273596" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1833964218" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="Wiced-Smart-SDK.null.133326508" name="Wiced-Smart-SDK"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="0.1007058781">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/WICED-Smart-SDK"/>
+		</configuration>
+		<configuration configurationName="Default">
+			<resource resourceType="PROJECT" workspacePath="/Wiced-Smart-SDK"/>
+		</configuration>
+		<configuration configurationName="proximity-BCM920737TAG_Q32"/>
+		<configuration configurationName="${BuildArtifactFileName}">
+			<resource resourceType="PROJECT" workspacePath="/WICED-Smart-SDK"/>
+		</configuration>
+		<configuration configurationName="health_thermometer-BCM920737TAG_Q32"/>
+		<configuration configurationName="blood_pressure_monitor-BCM920737TAG_Q32">
+			<resource resourceType="PROJECT" workspacePath="/Wiced-Smart-SDK"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets>
+			<target name="clean" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="blood_pressure_monitor-BCM920737TAG_Q32 BT_DEVICE_ADDRESS=123456789012 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>blood_pressure_monitor-BCM920737TAG_Q32 BT_DEVICE_ADDRESS=123456789012 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="proximity-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>proximity-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="health_thermometer-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>health_thermometer-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="a4wp_power_receiver-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>a4wp_power_receiver-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="a4wp_power_transmitter-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>a4wp_power_transmitter-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="automation_io-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>automation_io-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="hello_client-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>hello_client-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="hello_sensor-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>hello_sensor-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="cycling_speed_cadence-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>cycling_speed_cadence-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="long_characteristic-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>long_characteristic-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="mybeacon-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>mybeacon-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="ota_firmware_upgrade-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>ota_firmware_upgrade-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="ota_secure_firmware_upgrade-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>ota_secure_firmware_upgrade-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="spi_pressure_sensor-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>spi_pressure_sensor-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="proximity_client-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>proximity_client-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="speed_test-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>speed_test-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="spi_comm_master-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>spi_comm_master-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="spi_comm_slave-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>spi_comm_slave-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="i2c_temperature_sensor-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>i2c_temperature_sensor-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="uart_firmware_upgrade-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>uart_firmware_upgrade-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="watch-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>watch-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="pwm_tones-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>pwm_tones-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="glucose_meter-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>glucose_meter-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="running_speed_cadence-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>running_speed_cadence-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="heart_rate_monitor-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>heart_rate_monitor-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="ibeacon_device-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>ibeacon_device-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="ibeacon_managed-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>ibeacon_managed-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="location_and_navigation-BCM920736TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>location_and_navigation-BCM920736TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="help" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildTarget>help</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="line_cook-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>line_cook-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="line_cook_w_names-BCM920737TAG_Q32 download" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>${workspace_loc:/WICED-Smart-SDK}/make.exe</buildCommand>
+				<buildArguments/>
+				<buildTarget>line_cook_w_names-BCM920737TAG_Q32 download</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+		</buildTargets>
+	</storageModule>
+</cproject>
