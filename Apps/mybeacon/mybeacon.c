@@ -106,12 +106,14 @@ void mybeacon_create(void)
     adv[0].val     = ADV_FLAGS;
     adv[0].data[0] = LE_GENERAL_DISCOVERABLE | BR_EDR_NOT_SUPPORTED;
 
-    adv[1].len     = 2;
+    adv[1].len     = 0x1A;
     adv[1].val     = ADV_MANUFACTURER_DATA; // (AD_TYPE == 0xff)
-    adv[1].data[0] = 0x12;
-    adv[1].data[1] = 0x34;
 
-    //BT_MEMCPY(&adv[1].data[2], ibeacon_test_uuid, 16);
+    BT_MEMCPY(&adv[1].data[0], apple_ibeacon_prefix, 4);
+    BT_MEMCPY(&adv[1].data[4], ibeacon_uuid, 16);
+    BT_MEMCPY(&adv[1].data[20], ibeacon_major, 2);
+    BT_MEMCPY(&adv[1].data[22], ibeacon_minor, 2);
+    BT_MEMCPY(&adv[1].data[24], ibeacon_power, 1);
 
     bleprofile_GenerateADVData(adv, 2);
 
@@ -156,8 +158,7 @@ void advertisement_packet_transmission(UINT8 type)
 
         adv[1].len     = 0x1A;
         adv[1].val     = ADV_MANUFACTURER_DATA; // (AD_TYPE == 0xff)
-        //adv[1].data[0] = 0x12;
-        //adv[1].data[1] = 0x34;
+
         BT_MEMCPY(&adv[1].data[0], apple_ibeacon_prefix, 4);
         BT_MEMCPY(&adv[1].data[4], ibeacon_uuid, 16);
         BT_MEMCPY(&adv[1].data[20], ibeacon_major, 2);
