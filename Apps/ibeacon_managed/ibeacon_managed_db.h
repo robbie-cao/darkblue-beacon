@@ -42,8 +42,8 @@
 #define __UUID_IBEACON_MANAGED_MEASURED_POWER     0xcd, 0xda, 0x8f, 0x65, 0xf0, 0x62, 0x4b, 0x02, 0xbc, 0xec, 0x16, 0xe0, 0x9f, 0x92, 0x05, 0xe2
 
 // External definitions
-extern const UINT8  gatt_database[];
-extern const UINT16 gatt_database_len;
+extern const UINT8  beacon_gatt_database[];
+extern const UINT16 beacon_gatt_database_len;
 extern UINT16       ibeacon_managed_connection_handle;         // HCI handle of connection, not zero when connected
 extern const BLE_PROFILE_GPIO_CFG
                     ibeacon_managed_gpio_cfg;                  // Defines GPIO configuration used by the application

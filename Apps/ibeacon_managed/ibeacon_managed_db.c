@@ -15,7 +15,7 @@
 #include "platform.h"
 #include "ibeacon_managed_db.h"
 
-const UINT8 gatt_database[]= // Define GATT database
+const UINT8 beacon_gatt_database[]= // Define GATT database
 {
 // ***** Primary service 'Generic Access'
     //<Name>Generic Access</Name>
@@ -100,7 +100,7 @@ const UINT8 gatt_database[]= // Define GATT database
 
 };
 // Length of the GATT database
-const UINT16 gatt_database_len = sizeof(gatt_database);
+const UINT16 beacon_gatt_database_len = sizeof(beacon_gatt_database);
 
 // Following structure defines GPIO configuration used by the application
 const BLE_PROFILE_GPIO_CFG ibeacon_managed_gpio_cfg =
@@ -130,16 +130,17 @@ void ibeacon_managed_reg_timer()
 BOOL __write_handler(UINT16 handle, int len, UINT8 *attrPtr)
 {
     BOOL res = FALSE;
+    ble_trace0("write handle.\r\n");
     if (handle == HDLC_IBEACON_MANAGED_COMPANY_UUID_VALUE)
     {
         if (len != 16)
         {
-            ble_trace2("bad length:%d handle:%04x", len, handle);
+            ble_trace2("bad length:%d handle:%04x\r\n", len, handle);
         }
         else
         {
             //call custom on_write function
-            ble_trace1("write handle:%04x", handle);
+            ble_trace2("write handle:%04x length: %d.\r\n", handle, len);
             res = on_write_ibeacon_managed_company_uuid(len, attrPtr);
         }
     }
@@ -147,12 +148,12 @@ BOOL __write_handler(UINT16 handle, int len, UINT8 *attrPtr)
     {
         if (len != 2)
         {
-            ble_trace2("bad length:%d handle:%04x", len, handle);
+            ble_trace2("bad length:%d handle:%04x\r\n", len, handle);
         }
         else
         {
             //call custom on_write function
-            ble_trace1("write handle:%04x", handle);
+            ble_trace1("write handle:%04x\r\n", handle);
             res = on_write_ibeacon_managed_major_id(len, attrPtr);
         }
     }
@@ -160,12 +161,12 @@ BOOL __write_handler(UINT16 handle, int len, UINT8 *attrPtr)
     {
         if (len != 2)
         {
-            ble_trace2("bad length:%d handle:%04x", len, handle);
+            ble_trace2("bad length:%d handle:%04x\r\n", len, handle);
         }
         else
         {
             //call custom on_write function
-            ble_trace1("write handle:%04x", handle);
+            ble_trace1("write handle:%04x\r\n", handle);
             res = on_write_ibeacon_managed_minor_id(len, attrPtr);
         }
     }
@@ -173,12 +174,12 @@ BOOL __write_handler(UINT16 handle, int len, UINT8 *attrPtr)
     {
         if (len != 1)
         {
-            ble_trace2("bad length:%d handle:%04x", len, handle);
+            ble_trace2("bad length:%d handle:%04x\r\n", len, handle);
         }
         else
         {
             //call custom on_write function
-            ble_trace1("write handle:%04x", handle);
+            ble_trace1("write handle:%04x\r\n", handle);
             res = on_write_ibeacon_managed_measured_power(len, attrPtr);
         }
     }
@@ -190,7 +191,7 @@ BOOL store_in_db_generic_access_device_name(UINT8* p_value, UINT8 value_len)
 {
     BLEPROFILE_DB_PDU db_pdu;
     // Write value to the GATT DB
-    ble_trace2("write len:%d handle:%02x", value_len, HDLC_GENERIC_ACCESS_DEVICE_NAME_VALUE);
+    ble_trace2("write len:%d handle:%02x\r\n", value_len, HDLC_GENERIC_ACCESS_DEVICE_NAME_VALUE);
     memcpy(&db_pdu.pdu[0], p_value, value_len);
     db_pdu.len = value_len;
     bleprofile_WriteHandle(HDLC_GENERIC_ACCESS_DEVICE_NAME_VALUE, &db_pdu);
@@ -202,7 +203,7 @@ BOOL store_in_db_generic_access_appearance(UINT8* p_value, UINT8 value_len)
 {
     BLEPROFILE_DB_PDU db_pdu;
     // Write value to the GATT DB
-    ble_trace2("write len:%d handle:%02x", value_len, HDLC_GENERIC_ACCESS_APPEARANCE_VALUE);
+    ble_trace2("write len:%d handle:%02x\r\n", value_len, HDLC_GENERIC_ACCESS_APPEARANCE_VALUE);
     memcpy(&db_pdu.pdu[0], p_value, value_len);
     db_pdu.len = value_len;
     bleprofile_WriteHandle(HDLC_GENERIC_ACCESS_APPEARANCE_VALUE, &db_pdu);
@@ -214,7 +215,7 @@ BOOL store_in_db_ibeacon_managed_company_uuid(UINT8* p_value, UINT8 value_len)
 {
     BLEPROFILE_DB_PDU db_pdu;
     // Write value to the GATT DB
-    ble_trace2("write len:%d handle:%02x", value_len, HDLC_IBEACON_MANAGED_COMPANY_UUID_VALUE);
+    ble_trace2("write len:%d handle:%02x\r\n", value_len, HDLC_IBEACON_MANAGED_COMPANY_UUID_VALUE);
     memcpy(&db_pdu.pdu[0], p_value, value_len);
     db_pdu.len = value_len;
     bleprofile_WriteHandle(HDLC_IBEACON_MANAGED_COMPANY_UUID_VALUE, &db_pdu);
@@ -226,7 +227,7 @@ BOOL store_in_db_ibeacon_managed_major_id(UINT8* p_value, UINT8 value_len)
 {
     BLEPROFILE_DB_PDU db_pdu;
     // Write value to the GATT DB
-    ble_trace2("write len:%d handle:%02x", value_len, HDLC_IBEACON_MANAGED_MAJOR_ID_VALUE);
+    ble_trace2("write len:%d handle:%02x\r\n", value_len, HDLC_IBEACON_MANAGED_MAJOR_ID_VALUE);
     memcpy(&db_pdu.pdu[0], p_value, value_len);
     db_pdu.len = value_len;
     bleprofile_WriteHandle(HDLC_IBEACON_MANAGED_MAJOR_ID_VALUE, &db_pdu);
@@ -238,7 +239,7 @@ BOOL store_in_db_ibeacon_managed_minor_id(UINT8* p_value, UINT8 value_len)
 {
     BLEPROFILE_DB_PDU db_pdu;
     // Write value to the GATT DB
-    ble_trace2("write len:%d handle:%02x", value_len, HDLC_IBEACON_MANAGED_MINOR_ID_VALUE);
+    ble_trace2("write len:%d handle:%02x\r\n", value_len, HDLC_IBEACON_MANAGED_MINOR_ID_VALUE);
     memcpy(&db_pdu.pdu[0], p_value, value_len);
     db_pdu.len = value_len;
     bleprofile_WriteHandle(HDLC_IBEACON_MANAGED_MINOR_ID_VALUE, &db_pdu);
@@ -250,7 +251,7 @@ BOOL store_in_db_ibeacon_managed_measured_power(UINT8* p_value, UINT8 value_len)
 {
     BLEPROFILE_DB_PDU db_pdu;
     // Write value to the GATT DB
-    ble_trace2("write len:%d handle:%02x", value_len, HDLC_IBEACON_MANAGED_MEASURED_POWER_VALUE);
+    ble_trace2("write len:%d handle:%02x\r\n", value_len, HDLC_IBEACON_MANAGED_MEASURED_POWER_VALUE);
     memcpy(&db_pdu.pdu[0], p_value, value_len);
     db_pdu.len = value_len;
     bleprofile_WriteHandle(HDLC_IBEACON_MANAGED_MEASURED_POWER_VALUE, &db_pdu);

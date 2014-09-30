@@ -19,4 +19,4 @@ APP_SRC = ibeacon_managed_db.c ibeacon_managed.c
 # This application requires a special patch to stop RF activity when GPIO is active
 ########################################################################
 APP_PATCHES_AND_LIBS += additional_advertisement_control.a
-APP_PATCHES_AND_LIBS += ibeacon.a
+#APP_PATCHES_AND_LIBS += ibeacon.a
