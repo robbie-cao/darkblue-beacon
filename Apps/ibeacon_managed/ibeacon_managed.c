@@ -62,7 +62,7 @@
  *                     Constants
  ******************************************************/
 
-#define IBEACON_MANAGED_FINE_TIMER           								0
+#define IBEACON_MANAGED_FINE_TIMER           								1000
 #define IBEACON_MANAGED_DEVICE_NAME          								"darkblue"
 #define IBEACON_MANAGED_DEVICE_APPEARENCE    								APPEARANCE_GENERIC_TAG
 #define IBEACON_MANAGED_MAIN_SERVICE_UUID    								0
@@ -79,6 +79,8 @@
 #define HCIULP_PUBLIC_ADDRESS                                           	0x00
 #define HCIULP_ADV_FILTER_POLICY_WHITE_LIST_NOT_USED                    	0x00    // white list not used
 
+#define U8_SECONDS_IN_A_MINUTE												((UINT8)60)
+
 /******************************************************
  *                     Structures
  ******************************************************/
@@ -90,17 +92,46 @@ typedef PACKED struct
     // BD address of the bonded host
     BD_ADDR  bdaddr;
     UINT8  ibeacon_company_uuid[16];
+    UINT8  ibeacon_seed[16];
     UINT16 ibeacon_major;
     UINT16 ibeacon_minor;
     INT8   ibeacon_measured_power;
 }  HOSTINFO;
 #pragma pack()
 
+#ifdef IL_BIGENDIAN
+//Union to hold CRC.
+typedef union TUu32_parse
+{
+   UINT32 u32int;
+   struct
+   {
+	   UINT16 u16WordMSB;
+	   UINT16 u16WordLSB;
+   } WORD;
+}TUu32_parser;
+#else
+typedef union TUu32_parse
+{
+   UINT32 u32int;
+   struct
+   {
+	   UINT16 u16WordLSB;
+	   UINT16 u16WordMSB;
+   } WORD;
+}TUu32_parser;
+#endif
+
+#define	SECURE_BEACON
+
+
 /******************************************************
  *               Function Prototypes
  ******************************************************/
 
 static void ibeacon_managed_create(void);
+static void ibeacon_managed_timeout(UINT32 arg);
+static void ibeacon_managed_fine_timeout(UINT32 arg);
 static int  ibeacon_managed_write_handler( LEGATTDB_ENTRY_HDR *p );
 static void ibeacon_managed_interrupt_handler( UINT8 value );
 static void advertisement_packet_transmission(UINT8 type);
@@ -112,8 +143,8 @@ static void ibeacon_connection_down( void );
 static void ibeacon_advertisement_stopped( void );
 static void ibeacon_encryption_changed(HCI_EVT_HDR *evt);
 static void ibeacon_smp_bond_result(LESMP_PARING_RESULT  result);
-
-/******************************************************
+static UINT32 xorshift128( void )
+;/******************************************************
  *               Variables Definitions
  ******************************************************/
 
@@ -198,6 +229,10 @@ UINT8 	ibeacon_indication_sent    = 0;	// indication sent, waiting for ack
 UINT8   ibeacon_num_to_write       = 0;  	// Number of messages we need to send
 UINT8   ibeacon_stay_connected		= 1;	// Change that to 0 to disconnect when all messages are sent
 
+//JDD - global variables for the seed for our security xor shift
+UINT32 x, y, z, w;
+TUu32_parser secure_token;
+
 /******************************************************
  *               Function Definitions
  ******************************************************/
@@ -217,10 +252,23 @@ APPLICATION_INIT()
 void ibeacon_managed_create(void)
 {
 	int i;
-
+	#ifdef SECURE_BEACON
+		UINT32 test_seed1 = 0x12345678;
+		UINT32 test_seed2 = 0x12345678;
+		UINT32 test_seed3 = 0x12345678;
+		UINT32 test_seed4 = 0x12345678;
+	#endif
     extern UINT32 blecm_configFlag;
     blecm_configFlag |= BLECM_DBGUART_LOG | BLECM_DBGUART_LOG_L2CAP | BLECM_DBGUART_LOG_SMP;
     lesmpkeys_removeAllBondInfo();
+
+	#ifdef SECURE_BEACON
+		//JDD - store our seed information received
+		x = test_seed1;
+		y = test_seed2;
+		z = test_seed3;
+		w = test_seed4;
+	#endif
 
     ble_trace0("create()\r\n");
     ble_trace0(bleprofile_p_cfg->ver);
@@ -278,8 +326,43 @@ void ibeacon_managed_create(void)
 	//    ibeacon_start(ibeacon_managed_hostinfo.ibeacon_company_uuid, ibeacon_managed_hostinfo.ibeacon_major,
 	//    		ibeacon_managed_hostinfo.ibeacon_minor, ibeacon_managed_hostinfo.ibeacon_measured_power);
 
+	bleprofile_regTimerCb(ibeacon_managed_fine_timeout, ibeacon_managed_timeout);
+	bleprofile_StartTimer();
+
     //JDD - startup our own ibeacon library
     darkblue_ibeacon_start();
+}
+
+void ibeacon_managed_timeout(UINT32 arg)
+{
+    ble_trace1("darkblue_timeout:%d\n", ibeacon_timer_count);
+
+    switch(arg)
+    {
+        case BLEPROFILE_GENERIC_APP_TIMER:
+        {
+        	ibeacon_timer_count++;
+        }
+        break;
+    }
+}
+
+void ibeacon_managed_fine_timeout(UINT32 arg)
+{
+	ibeacon_fine_timer_count++;
+    ble_trace1("darkblue_fine_timeout:%d\r\n", ibeacon_fine_timer_count);
+    if(ibeacon_fine_timer_count >= U8_SECONDS_IN_A_MINUTE)
+    {
+    	ibeacon_fine_timer_count = 0;
+    	//JDD - generate a new advertisement with new maj and min values
+    	//darkblue_create_beacon_adv();
+		ble_trace1("Next x [%u]\r\n", x);
+		ble_trace1("Next y [%u]\r\n", y);
+		ble_trace1("Next z [%u]\r\n", z);
+		ble_trace1("Next w [%u]\r\n", w);
+    	secure_token.u32int = xorshift128();
+    	ble_trace2("It's been a minute, new major value [%04x] minor value [%04x].\r\n", secure_token.WORD.u16WordMSB, secure_token.WORD.u16WordLSB);
+    }
 }
 
 // this function is called 2.5 msec before the advertisement event.  In this sample
@@ -447,6 +530,7 @@ void darkblue_ibeacon_start( void )
 void darkblue_create_beacon_adv( void )
 {
     BLE_ADV_FIELD adv[2];
+    static UINT8 test = 0;
 
 	adv[0].len     = 1 + 1;
 	adv[0].val     = ADV_FLAGS;
@@ -457,9 +541,28 @@ void darkblue_create_beacon_adv( void )
 
 	BT_MEMCPY(&adv[1].data[0], apple_ibeacon_prefix, 4);
 	BT_MEMCPY(&adv[1].data[4], ibeacon_managed_hostinfo.ibeacon_company_uuid, 16);
-	//BT_MEMCPY(&adv[1].data[4], ibeacon_uuid, 16);
-	BT_MEMCPY(&adv[1].data[20], ibeacon_major, 2);
-	BT_MEMCPY(&adv[1].data[22], ibeacon_minor, 2);
+
+	#ifdef SECURE_BEACON
+		if(test == 0)
+		{
+			test++;
+			ble_trace1("Initial x [%u]\r\n", x);
+			ble_trace1("Initial y [%u]\r\n", y);
+			ble_trace1("Initial z [%u]\r\n", z);
+			ble_trace1("Initial w [%u]\r\n", w);
+			secure_token.u32int = xorshift128();
+			ble_trace2("Init major minor, new major value [%04x] minor value [%04x].\r\n", secure_token.WORD.u16WordMSB, secure_token.WORD.u16WordLSB);
+		}
+
+		//JDD - we are using our security mechanism for major and minor
+		//JDD - by placing the random, sync'ed value with the server
+		BT_MEMCPY(&adv[1].data[20], secure_token.WORD.u16WordMSB, 2);
+		BT_MEMCPY(&adv[1].data[22], secure_token.WORD.u16WordLSB, 2);
+	#else
+		BT_MEMCPY(&adv[1].data[20], ibeacon_managed_hostinfo.ibeacon_major, 2);
+		BT_MEMCPY(&adv[1].data[22], ibeacon_managed_hostinfo.ibeacon_minor, 2);
+	#endif
+
 	BT_MEMCPY(&adv[1].data[24], ibeacon_power, 1);
 
 	bleprofile_GenerateADVData(adv, 2);
@@ -619,4 +722,15 @@ void ibeacon_smp_bond_result(LESMP_PARING_RESULT  result)
     }
 }
 
+
+/**
+ * A security mechanism we are using to place a random value sync'ed with the server to reject incorrect beacons with
+ */
+UINT32 xorshift128(void) {
+
+	UINT32 t = x ^ (x << 11);
+	ble_trace1("T value [%u].\r\n", t);
+    x = y; y = z; z = w;
+    return w = w ^ (w >> 19) ^ t ^ (t >> 8);
+}
 
